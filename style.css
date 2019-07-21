@@ -1,0 +1,89 @@
+body {
+  /* background: #F8F8F8; */
+  width: 100vw;
+  height: 100vh;
+  background: #005ff9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: ArialMT;
+}
+
+body form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 160px;
+  background: #FFFFFF;
+  border-radius: 10px;
+}
+
+.rus {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 50px;
+  font-size: 15px;
+  line-height: 18px;
+  color: #333333;
+}
+
+.separator {
+  cursor: default;
+}
+
+.phoneInput {
+  width: 25px;
+  height: 32px;
+  background: #F0F0F0;
+  border-radius: 2px;
+  border: none;
+}
+
+.phoneInput.clear {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+}
+
+.phoneInput.clear:hover {
+  border: 1px solid rgba(0, 0, 0, 0.24);
+}
+
+.phoneInput.clear:focus {
+  border: 1px solid rgba(0, 0, 0, 0.48);
+}
+
+input {
+  margin: 0 4px;
+  cursor: default;
+  font-family: ArialMT;
+  text-align: center;
+  font-size: 15px;
+  line-height: 18px;
+  color: #333333;
+}
+
+input:focus {
+  outline: none;
+}
+
+.phoneInput.clear:invalid {
+  border: 1px solid #FF1100;
+}
+
+.phoneInput.clear:invalid + span:after {
+  content: 'Неверный номер, попробуйте ещё раз';
+  display: block;
+  position: absolute;
+  height: 20px;
+  right: calc(50% - 20px);
+  top: calc(40vh + 101px);
+  font-size: 13px;
+  line-height: 20px;
+  color: #FF1100;
+}

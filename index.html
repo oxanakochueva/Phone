@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>phoneComponent</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <form name="tab">
+    <div class="rus">
+      <div class="separator">+</div>
+      <input  class="phoneInput"
+              type="tel"
+              maxlength="1"
+              value="7"
+              pattern="7"
+              disabled>
+      </input>
+      <div class="separator">(</div>
+      <input  class="phoneInput"
+              name="step_1"
+              type="tel"
+              maxlength="1"
+              value="9"
+              onkeyup="moveCursor(this, this, document.tab.step_2)"
+              oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+              disabled>
+      </input>
+      <input  class="phoneInput"
+              name="step_2"
+              type="tel"
+              maxlength="1"
+              value="8"
+              onkeyup="moveCursor(document.tab.step_1, this, document.tab.step_3)"
+              oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+              disabled>
+      </input>
+      <input  class="phoneInput"
+              name="step_3"
+              type="tel"
+              maxlength="1"
+              value="5"
+              onkeyup="moveCursor(document.tab.step_2, this, document.tab.step_4)"
+              oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+              disabled>
+      </input>
+      <div class="separator">)</div>
+      <input  class="phoneInput"
+              name="step_4"
+              type="tel"
+              maxlength="1"
+              value="0"
+              onkeyup="moveCursor(document.tab.step_3, this, document.tab.step_5)"
+              oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+              disabled>
+      </input>
+      <input  class="phoneInput clear"
+              name="step_5"
+              onkeyup="moveCursor(document.tab.step_4, this, document.tab.step_6)"
+              type="tel"
+              maxlength="1"
+              value="_"
+              placeholder="_"
+              pattern="[4_]"
+              oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+              onkeypress="if(this.value == '_') { this.value = ''; }"
+              required>
+      <span></span></input>
+      <input  class="phoneInput clear"
+              name="step_6"
+              onkeyup="moveCursor(document.tab.step_5, this, document.tab.step_7)"
+              type="tel"
+              maxlength="1"
+              value="_"
+              placeholder="_"
+              pattern="[4_]"
+              oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+              onkeypress="if(this.value == '_') { this.value = ''; }"
+              required>
+      <span></span></input>
+      <div class="separator"> – </div>
+      <input  class="phoneInput"
+              id="hidden"
+              name="step_7"
+              type="password"
+              maxlength="1"
+              value=""
+              placeholder="*"
+              onkeyup="moveCursor(document.tab.step_6, this, document.tab.step_8)"
+              oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+              required>
+      </input>
+      <input  class="phoneInput"
+              id="hidden"
+              name="step_8"
+              type="password"
+              maxlength="1"
+              value=""
+              placeholder="*"
+              onkeyup="moveCursor(document.tab.step_7, this, document.tab.step_9)"
+              oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+              required>
+      </input>
+      <div class="separator"> – </div>
+      <input  class="phoneInput"
+              id="hidden"
+              name="step_9"
+              type="password"
+              maxlength="1"
+              value=""
+              placeholder="*"
+              onkeyup="moveCursor(document.tab.step_8, this, document.tab.step_10)"
+              oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+              required>
+      </input>
+      <input  class="phoneInput"
+              id="hidden"
+              name="step_10"
+              type="password"
+              maxlength="1"
+              value=""
+              placeholder="*"
+              onkeyup="moveCursor(document.tab.step_9, this, this)"
+              oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+              required>
+      </input>
+    </div>
+
+  </form>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
